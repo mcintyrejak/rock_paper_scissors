@@ -11,8 +11,9 @@ function getComputerChoice() {
     }
 }
 
-console.log("Computer choice: ", getComputerChoice());
+let computerChoice = getComputerChoice();
 
+console.log(computerChoice);
 // checkInputs(){
 //     // Check that case doesn't matter
 // }
@@ -24,12 +25,11 @@ function getPlayerChoice() {
     console.log("Player choice: ", playerChoice)
 }
 
-console.log(getPlayerChoice())
 
-
-// determineWinner(){
+// function determineWinner() {
 //     // Compare computer's choice to player's choice
 //     // Output winner
+//     if (playerChoice === computer)
 // }
 
 // game(){
