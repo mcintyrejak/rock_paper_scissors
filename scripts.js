@@ -3,17 +3,17 @@ function getComputerChoice() {
     // Output the computer's choice
     let ranNum = Math.floor((Math.random() * 3) + 1)
     if (ranNum === 1) {
-        return "Rock"
+        return "rock"
     } else if (ranNum === 2) {
-        return "Paper"
+        return "paper"
     } else {
-        return "Scissors"
+        return "scissors"
     }
 }
 
 let computerChoice = getComputerChoice();
 
-console.log(computerChoice);
+console.log("Computer choice: ", computerChoice);
 // checkInputs(){
 //     // Check that case doesn't matter
 // }
@@ -21,16 +21,23 @@ console.log(computerChoice);
 function getPlayerChoice() {
     // Get the player's choice of rock, paper, scissors
     // Output the player's choice
-    let playerChoice = prompt("Choose rock, paper, or scissors");
-    console.log("Player choice: ", playerChoice)
+    let input = prompt("Choose rock, paper, or scissors");
+    return input
 }
+
+let playerChoice = getPlayerChoice();
+console.log("Player choice: ", playerChoice);
 
 
 // function determineWinner() {
 //     // Compare computer's choice to player's choice
 //     // Output winner
-//     if (playerChoice === computer)
+//     if (computerChoice === playerChoice) {
+//         return "Tie"
+//     } else if
 // }
+
+// console.log("Winner: ", determineWinner())
 
 // game(){
 //     // Play five rounds
