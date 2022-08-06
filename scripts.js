@@ -12,6 +12,7 @@ function getPlayerChoice() {
 
 let playerChoice = getPlayerChoice();
 console.log("Player choice: ", playerChoice);
+
 function getComputerChoice() {
     // Get the computer's choice of rock, paper, scissors
     // Output the computer's choice
@@ -35,6 +36,10 @@ function determineWinner() {
     // Output winner
     if (computerChoice === playerChoice) {
         return "Tie"
+    } else if ((playerChoice === "rock" && computerChoice === "scissors") || (playerChoice === "scissors" && computerChoice === "paper") || (playerChoice === "paper" && computerChoice === "rock")) {
+        return "You Win"
+    } else {
+        return "Computer Wins"
     }
 }
 
