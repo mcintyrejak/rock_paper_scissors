@@ -1,3 +1,17 @@
+
+// checkInputs(){
+//     // Check that case doesn't matter
+// }
+
+function getPlayerChoice() {
+    // Get the player's choice of rock, paper, scissors
+    // Output the player's choice
+    let input = prompt("Choose rock, paper, or scissors");
+    return input
+}
+
+let playerChoice = getPlayerChoice();
+console.log("Player choice: ", playerChoice);
 function getComputerChoice() {
     // Get the computer's choice of rock, paper, scissors
     // Output the computer's choice
@@ -14,30 +28,17 @@ function getComputerChoice() {
 let computerChoice = getComputerChoice();
 
 console.log("Computer choice: ", computerChoice);
-// checkInputs(){
-//     // Check that case doesn't matter
-// }
 
-function getPlayerChoice() {
-    // Get the player's choice of rock, paper, scissors
-    // Output the player's choice
-    let input = prompt("Choose rock, paper, or scissors");
-    return input
+
+function determineWinner() {
+    // Compare computer's choice to player's choice
+    // Output winner
+    if (computerChoice === playerChoice) {
+        return "Tie"
+    }
 }
 
-let playerChoice = getPlayerChoice();
-console.log("Player choice: ", playerChoice);
-
-
-// function determineWinner() {
-//     // Compare computer's choice to player's choice
-//     // Output winner
-//     if (computerChoice === playerChoice) {
-//         return "Tie"
-//     } else if
-// }
-
-// console.log("Winner: ", determineWinner())
+console.log("Winner: ", determineWinner())
 
 // game(){
 //     // Play five rounds
