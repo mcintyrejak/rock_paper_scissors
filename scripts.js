@@ -1,3 +1,6 @@
+// global variables //
+const choices = ["rock", "paper", "scissors"]
+
 function game() {
     // play the game
     // play five rounds
@@ -14,4 +17,5 @@ function playerChoice() {
 
 function computerChoice() {
     // get a random input from the computer 
+    return choices[Math.floor(Math.random() * choices.length)]
 }
