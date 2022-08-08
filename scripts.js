@@ -18,6 +18,9 @@ function playRound() {
 function playerChoice() {
     // get input from the player
     let input = prompt("Rock, paper, or scissors?");
+    // make the input case insensitive
+    input = input.toLowerCase();
+    console.log(input);
 }
 
 function computerChoice() {
