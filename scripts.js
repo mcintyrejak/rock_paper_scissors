@@ -31,9 +31,15 @@ function playRound(playerChoice, computerChoice) {
 function game() {
     for (let i = 0; i < 5; i++) {
         let computerSelection = getComputerChoice()
-        console.log(playRound(playerSelection, computerSelection))
+        playRound(playerSelection, computerSelection)
+    }
+    if (playerWins > computerWins) {
+        console.log(`Player wins it all! ${playerWins} to ${computerWins}`)
+    } else if (playerWins < computerWins) {
+        console.log(`Computer wins it all! ${computerWins} to ${playerWins}`)
+    } else if (playerWins === computerWins) {
+        console.log("Ties!!!!")
     }
 }
-
 game()
 
