@@ -1,9 +1,9 @@
 // global variables
 const choices = ["rock", "paper", "scissors"]
-const playerSelection = "rock"
 let playerWins = 0
 let computerWins = 0
 let ties = 0
+
 
 
 // gets a random computer choice of rock, paper, scissors
@@ -31,6 +31,7 @@ function playRound(playerChoice, computerChoice) {
 function game() {
     for (let i = 0; i < 5; i++) {
         let computerSelection = getComputerChoice()
+        let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase()
         playRound(playerSelection, computerSelection)
     }
     if (playerWins > computerWins) {
