@@ -1,10 +1,10 @@
 // global variables
 const choices = ["rock", "paper", "scissors"]
 const playerSelection = "rock"
-const computerSelection = getComputerChoice()
 let playerWins = 0
 let computerWins = 0
 let ties = 0
+
 
 // gets a random computer choice of rock, paper, scissors
 function getComputerChoice() {
@@ -12,10 +12,9 @@ function getComputerChoice() {
     return choices[ranNum]
 }
 
+
 // plays one round of rock, paper, scissors
 function playRound(playerChoice, computerChoice) {
-    // computerChoice = computerSelection;
-    // playerChoice = playerSelection;
     if (playerChoice === computerChoice) {
         ties++;
         return "Tie!"
@@ -28,5 +27,13 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-console.log(playRound(playerSelection, computerSelection))
+// plays a 5 round game that keeps score and reports a winner or loser
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let computerSelection = getComputerChoice()
+        console.log(playRound(playerSelection, computerSelection))
+    }
+}
+
+game()
 
