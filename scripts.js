@@ -7,6 +7,11 @@ let ties = 0
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
+const resultEl = document.querySelector('#result')
+const tiesEl = document.querySelector('#ties');
+const winsEl = document.querySelector('#wins');
+const lossesEl = document.querySelector('#losses');
+
 
 
 
@@ -22,20 +27,34 @@ function getComputerChoice() {
 
 // plays one round of rock, paper, scissors
 function playRound(playerChoice, computerChoice) {
-    if (playerChoice === computerChoice) {
+    let totalGames = ties + playerWins + computerWins;
+    if (totalGames >= 5) {
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+        if (playerWins > computerWins) {
+            resultEl.textContent = "You win the game!";
+        } else if (computerWins > playerWins) {
+            resultEl.textContent = "Computer wins the game!";
+        } else {
+            resultEl.textContent = "Tie for the game!";
+        }
+    } else if (playerChoice === computerChoice) {
         ties++;
-        // return "Tie!"
-        console.log("tie")
+        resultEl.textContent = "Tie this time!";
+        tiesEl.textContent = `Ties: ${ties}`;
     } else if (playerChoice === "rock" && computerChoice === "scissors" || playerChoice === "scissors" && computerChoice === "paper" || playerChoice === "paper" && computerChoice === "rock") {
         playerWins++;
-        // return "Player wins!"
-        console.log("player wins")
+        resultEl.textContent = `Computer picked ${computerChoice}. You win this one!`
+        winsEl.textContent = `Wins: ${playerWins}`;
     } else {
         computerWins++;
-        // return "Computer wins!"
-        console.log("computer wins")
+        resultEl.textContent = `Computer picked ${computerChoice}. Computer wins this one!`
+        lossesEl.textContent = `Losses: ${computerWins}`;
     }
 }
+
+
 
 
 //listen for clicks on each button and call playRound() with the correct playerSelection every time the button is clicked
@@ -62,7 +81,6 @@ scissorsBtn.addEventListener('click', () => {
     console.log(playerChoice);
     console.log(computerChoice);
 })
-
 
 
 
